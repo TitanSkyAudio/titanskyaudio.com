@@ -35,14 +35,11 @@
       href="https://fonts.googleapis.com/css?family=Roboto:100"
       rel="stylesheet"
     />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-      const apiKey = process.env.RECAPTCHA_SITE_KEY
-
-      function onSubmit(apiKey) {
-        document.getElementById("demo-form").submit();
-      }
-
+      function decryptEmail(encoded) {
+        var address = atob(encoded);
+        window.location.href = "mailto:" + address;
+      }   
     </script>
   </head>
 
@@ -118,7 +115,6 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section bg-light">
       <div class="container">
-        <!-- Featured Project Row -->
         <h1 class="text-center mb-5">Little Big Workshop</h1>
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
           <div class="col-xl-8 col-lg-7">
@@ -159,7 +155,6 @@
     <section id="about" class="about-section text-center">
       <div class="container">
         <div class="row">
-          <!-- About Header -->
           <div class="col-lg-8 mx-auto">
             <h2 class="text-white mb-4">
               About Us
@@ -173,9 +168,7 @@
             </p>
           </div>
           </div>
-
           <section>
-            <!-- About Row One -->
             <div class="row justify-content-center no-gutters">
               <div class="col-lg-6">
                 <img src="img/janjoakimgoat.jpg" class="img-fluid" alt="" />
@@ -197,7 +190,6 @@
               </div>
             </div>
 
-            <!-- About Row Two -->
             <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
               <div class="col-lg-6">
                 <img src="img/janolof.jpg" class="img-fluid" alt="" />
@@ -229,10 +221,10 @@
         <div class="d-flex h-100">
           <div class="project-text w-100 my-auto text-center">
             <h4 class="text-white">Contact</h4>
-            <p class="mb-0 text-white-50" style="font-size: ;">
+            <p class="mb-0 text-white-50">
               Drop us an email if you want to schedule a talk, start a project or just say hi and talk games. We'd love to chat!              
             </p>
-
+          </br>
           </div>
         </div>
       </div>
@@ -240,10 +232,9 @@
         <a href="https://twitter.com/ojabim" class="mx-2">
           <i class="fab fa-twitter text-primary mb-2"></i>
         </a>
-        <a href="mailto:titanskyaudio@gmail.com" class="mx-2">
+        <a href="javascript:decryptEmail('dGl0YW5za3lhdWRpb0BnbWFpbC5jb20=');" class="mx-2">
           <i class="fas fa-envelope text-primary mb-2"></i>
         </a>
-        
       </div>
     </section>
 
